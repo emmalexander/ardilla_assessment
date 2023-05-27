@@ -2,6 +2,8 @@ import 'package:ardilla_assessment/conts/app_colors.dart';
 import 'package:ardilla_assessment/screens/splash.dart';
 import 'package:flutter/material.dart';
 
+import 'screens/dashboard.dart';
+import 'screens/log_in.dart';
 import 'screens/sign_up/register_profile.dart';
 import 'screens/sign_up/verify_email.dart';
 
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
                   backgroundColor: AppColors.primary,
                   foregroundColor: Colors.white)),
           fontFamily: 'CabinetGrotesk'),
-      home: const RegisterProfile(),
+      home: const Dashboard(),
     );
   }
 }

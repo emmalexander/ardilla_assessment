@@ -49,6 +49,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
   flutter_native_splash: ^2.3.0
+  smooth_page_indicator: ^1.1.0
 
 flutter_native_splash:
   color: "#8807F7"
@@ -75,6 +76,12 @@ flutter:
     - assets/fonts/
     - assets/top.png
     - assets/verify_email.png
+    - assets/trophy.png
+    - assets/medal.png
+    - assets/stars_background.png
+    - assets/star_medal.png
+    - assets/coin.png
+    - assets/account.png
 
   fonts:
     - family: CabinetGrotesk

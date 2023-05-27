@@ -20,7 +20,7 @@ class SignUp extends StatelessWidget {
             bottom: 0,
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
-              height: 620,
+              height: 670,
               decoration: const BoxDecoration(
                   color: AppColors.primaryLight,
                   borderRadius: BorderRadius.only(
@@ -35,7 +35,7 @@ class SignUp extends StatelessWidget {
             bottom: 0,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 35),
-              height: 600,
+              height: 650,
               decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
