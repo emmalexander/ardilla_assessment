@@ -1,5 +1,6 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileRow extends StatelessWidget {
   const ProfileRow({Key? key}) : super(key: key);
@@ -20,30 +21,37 @@ class ProfileRow extends StatelessWidget {
             tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
           );
         }),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               children: [
                 Text(
                   'Good Morning.',
-                  style: TextStyle(color: Colors.grey.shade500),
+                  style: TextStyle(color: Colors.grey.shade500, fontSize: 13),
                 ),
-                Image.asset('assets/sun.png')
+                const Icon(
+                  Icons.sunny,
+                  color: Colors.amber,
+                  size: 13,
+                )
+                // Iconify(EmojioneMonotone.sun)
+                //Image.asset('assets/sun.png')
               ],
             ),
-            Text(
+            const Text(
               'Cadet <Annie/>',
               style: TextStyle(
-                color: AppColors.primaryDark,
-                fontWeight: FontWeight.w700,
-              ),
+                  color: AppColors.primaryDark,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18),
             ),
           ],
         ),
-        Spacer(),
-        Image.asset('assets/notification.png')
+        const Spacer(),
+        SvgPicture.asset('assets/notification.svg')
       ],
     );
   }

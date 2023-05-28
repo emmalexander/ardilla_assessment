@@ -36,12 +36,10 @@ class AchievementContainer extends StatelessWidget {
           topTitle,
           style: const TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               color: AppColors.primaryDark),
         ),
-        const SizedBox(
-          height: 8,
-        ),
+        const SizedBox(height: 8),
         ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: Container(
@@ -60,7 +58,10 @@ class AchievementContainer extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: TextStyle(fontSize: 20, color: titleTextColor),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 20,
+                            color: titleTextColor),
                       ),
                       const SizedBox(height: 10),
                       SizedBox(

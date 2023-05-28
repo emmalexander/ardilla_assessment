@@ -15,17 +15,17 @@ class AchievementPageView extends StatelessWidget {
       child: PageView(
         controller: pageController,
         children: [
-          const AchievementContainer(
-              backgroundColor: Color(0xFFFEF6F8),
+          AchievementContainer(
+              backgroundColor: AppColors.secondary.withOpacity(.06),
               topTitle: 'Rank',
               title: 'Cadet',
-              titleTextColor: Color(0xFFE8356D),
+              titleTextColor: AppColors.secondary,
               subtitle: 'Move up your Rank by completing transactions',
               alignment: Alignment.centerRight,
               rightImageUrl: 'assets/star_medal.png',
-              rightPadding: EdgeInsets.only(right: 10)),
+              rightPadding: const EdgeInsets.only(right: 10)),
           AchievementContainer(
-            backgroundColor: const Color(0xFFF9F9F9),
+            backgroundColor: AppColors.offWhite,
             topTitle: 'Badges',
             title: 'Beginner',
             titleTextColor: AppColors.primaryDark,
@@ -36,8 +36,8 @@ class AchievementPageView extends StatelessWidget {
             rightPadding: const EdgeInsets.only(right: 10),
             smallBottomWidget: const SuperSaverWidget(),
           ),
-          const AchievementContainer(
-            backgroundColor: Color(0xFFF0F0FF),
+          AchievementContainer(
+            backgroundColor: AppColors.primary.withOpacity(.06),
             topTitle: 'Referrals',
             title: 'Refer & Earn',
             titleTextColor: AppColors.primaryDark,
@@ -45,11 +45,11 @@ class AchievementPageView extends StatelessWidget {
             alignment: Alignment.bottomRight,
             rightImageUrl: 'assets/coin.png',
             rightPadding: EdgeInsets.zero,
-            smallBottomWidget: ArrowWidget(text: 'Click here'),
-            smallBottomWidgetPadding: EdgeInsets.only(bottom: 20),
+            smallBottomWidget: const ArrowWidget(text: 'Click here'),
+            smallBottomWidgetPadding: const EdgeInsets.only(bottom: 20),
           ),
           const AchievementContainer(
-            backgroundColor: Color(0xFFF0F0FF),
+            backgroundColor: AppColors.offWhite,
             topTitle: 'Money Wise',
             title: 'Financial nuggets',
             titleTextColor: AppColors.primaryDark,

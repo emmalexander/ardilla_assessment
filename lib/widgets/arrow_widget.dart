@@ -7,6 +7,7 @@ class ArrowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      spacing: 5,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         Text(

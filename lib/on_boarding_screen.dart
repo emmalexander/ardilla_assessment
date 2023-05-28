@@ -2,8 +2,8 @@ import 'package:ardilla_assessment/conts/app_colors.dart';
 import 'package:ardilla_assessment/screens/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/introduction.dart';
-import 'widgets/introscreenonboarding.dart';
+import 'widgets/intro/introduction.dart';
+import 'widgets/intro/introscreenonboarding.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);

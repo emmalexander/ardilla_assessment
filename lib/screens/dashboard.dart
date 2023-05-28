@@ -1,11 +1,13 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
 import 'package:ardilla_assessment/widgets/achievement_widgets/achievement_page_view.dart';
-import 'package:ardilla_assessment/widgets/chart_container.dart';
-import 'package:ardilla_assessment/widgets/investment_page_view.dart';
+import 'package:ardilla_assessment/widgets/cards/cards_page_view.dart';
+import 'package:ardilla_assessment/widgets/chart_section/chart_container.dart';
+import 'package:ardilla_assessment/widgets/explore/explore_section.dart';
+import 'package:ardilla_assessment/widgets/investment_section/investment_page_view.dart';
 import 'package:ardilla_assessment/widgets/my_drawer.dart';
 import 'package:ardilla_assessment/widgets/page_navigation_row.dart';
 import 'package:ardilla_assessment/widgets/profile_row.dart';
-import 'package:ardilla_assessment/widgets/quick_links_row.dart';
+import 'package:ardilla_assessment/widgets/quick_links_section/quick_links_section.dart';
 import 'package:ardilla_assessment/widgets/video_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -21,11 +23,6 @@ class _DashboardState extends State<Dashboard> {
   late PageController _pageController1;
   late PageController _pageController2;
   late PageController _pageController3;
-  List images = [
-    Image.asset('assets/card_1.png'),
-    Image.asset('assets/card_2.png'),
-    Image.asset('assets/card_3.png'),
-  ];
 
   @override
   void initState() {
@@ -43,10 +40,24 @@ class _DashboardState extends State<Dashboard> {
     super.dispose();
   }
 
+  void _onBackPressed(pageController) {
+    if (pageController.page! > 0) {
+      pageController.previousPage(
+          duration: const Duration(milliseconds: 500), curve: Curves.ease);
+    }
+  }
+
+  void _onForwardPressed(pageController) {
+    if (pageController.page! < 2) {
+      pageController.nextPage(
+          duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       drawer: const MyDrawer(),
       body: SingleChildScrollView(
         child: Column(
@@ -59,17 +70,14 @@ class _DashboardState extends State<Dashboard> {
             ),
             SizedBox(
               height: 250,
-              child: PageView.builder(
-                  itemCount: images.length,
-                  controller: _pageController1,
-                  itemBuilder: (context, index) {
-                    return images[index];
-                  }),
+              child: CardsPageView(
+                controller: _pageController1,
+              ),
             ),
             Center(
               child: SmoothPageIndicator(
                 controller: _pageController1,
-                count: images.length,
+                count: 3,
                 effect: const SlideEffect(
                   dotHeight: 2,
                   dotWidth: 70,
@@ -80,58 +88,18 @@ class _DashboardState extends State<Dashboard> {
             ),
             const SizedBox(height: 10),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Quick Links',
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.primaryDark),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      QuickLinksRow(
-                        imageUrl: 'assets/box_1.png',
-                        text: 'SAN',
-                      ),
-                      QuickLinksRow(
-                        imageUrl: 'assets/box_2.png',
-                        text: 'Save',
-                      ),
-                      QuickLinksRow(
-                        imageUrl: 'assets/box_3.png',
-                        text: 'Learn',
-                      ),
-                      QuickLinksRow(
-                        imageUrl: 'assets/box_4.png',
-                        text: 'Payment',
-                      ),
-                    ],
-                  )
-                ],
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+              child: QuickLinksSection(),
             ),
+            const SizedBox(height: 20),
             const ChartContainer(),
             const SizedBox(height: 10),
             PageNavigationRow(
               onBackPressed: () {
-                if (_pageController2.page! > 0) {
-                  _pageController2.previousPage(
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeInBack);
-                }
+                _onBackPressed(_pageController2);
               },
               onForwardPressed: () {
-                if (_pageController2.page! < 2) {
-                  _pageController2.nextPage(
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeIn);
-                }
+                _onForwardPressed(_pageController2);
               },
             ),
             SizedBox(
@@ -140,9 +108,9 @@ class _DashboardState extends State<Dashboard> {
                 pageController: _pageController2,
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
-              height: 240,
+              height: 250,
               child: AchievementPageView(
                 pageController: _pageController3,
               ),
@@ -153,18 +121,21 @@ class _DashboardState extends State<Dashboard> {
                 child: SmoothPageIndicator(
                   controller: _pageController3,
                   count: 4,
-                  effect: const ExpandingDotsEffect(
+                  effect: ExpandingDotsEffect(
                     spacing: 2,
                     radius: 50,
                     dotHeight: 6,
                     dotWidth: 6,
-                    dotColor: Colors.grey,
+                    dotColor: AppColors.primary.withOpacity(.3),
                     activeDotColor: AppColors.primary,
                   ),
                 ),
               ),
             ),
-            VideoWidget(),
+            const SizedBox(height: 30),
+            const Center(child: VideoWidget()),
+            const SizedBox(height: 20),
+            const ExploreSection()
           ],
         ),
       ),
