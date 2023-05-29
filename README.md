@@ -25,9 +25,9 @@ These instructions will help you get a copy of the project up and running on you
 4. Run the app: `flutter run`
 
 ### Link to release
-[app-arm64-v8a-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-arm64-v8a-release.apk)
-[app-armeabi-v7a-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-armeabi-v7a-release.apk)
-[app-x86_64-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-x86_64-release.apk)
+- [app-arm64-v8a-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-arm64-v8a-release.apk)
+- [app-armeabi-v7a-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-armeabi-v7a-release.apk)
+- [app-x86_64-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-x86_64-release.apk)
 
 ### Contact
 - [email](mailto:emmanuelohiocheoya@gmail.com)
