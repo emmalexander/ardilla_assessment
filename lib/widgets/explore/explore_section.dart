@@ -1,4 +1,5 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:ardilla_assessment/widgets/explore/explore_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -10,14 +11,12 @@ class ExploreSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(left: 30),
+        Padding(
+          padding: const EdgeInsets.only(left: 30),
           child: Text(
             'Explore',
-            style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primaryDark),
+            style: AppTextStyle.bodySemiBold.copyWith(
+                color: AppColors.primaryDark, fontWeight: FontWeight.w500),
           ),
         ),
         const SizedBox(height: 10),

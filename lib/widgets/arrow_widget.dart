@@ -1,4 +1,5 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class ArrowWidget extends StatelessWidget {
@@ -12,7 +13,7 @@ class ArrowWidget extends StatelessWidget {
       children: [
         Text(
           text,
-          style: const TextStyle(color: AppColors.primary, fontSize: 13),
+          style: AppTextStyle.tinyText.copyWith(color: AppColors.primary),
         ),
         const Icon(
           Icons.arrow_forward,

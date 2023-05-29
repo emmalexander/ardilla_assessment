@@ -39,7 +39,11 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   iconify_flutter: ^0.0.5
   fluentui_system_icons: ^1.1.201
-  intl:
+  intl: ^0.18.1
+  flutter_bloc: ^8.1.2
+  equatable: ^2.0.5
+  path_provider: ^2.0.14
+  fl_chart: ^0.62.0
 
 dev_dependencies:
   flutter_test:
@@ -95,6 +99,8 @@ flutter:
         - asset: assets/fonts/CabinetGrotesk-Regular.otf
         - asset: assets/fonts/CabinetGrotesk-Light.otf
           weight: 300
+        - asset: assets/fonts/CabinetGrotesk-Medium.otf
+          weight: 500
 
     - family: icomoon
       fonts:

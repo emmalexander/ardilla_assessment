@@ -1,3 +1,6 @@
+import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
+import 'package:ardilla_assessment/widgets/coming_soon.dart';
 import 'package:flutter/material.dart';
 
 class ExploreWidget extends StatelessWidget {
@@ -15,23 +18,14 @@ class ExploreWidget extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
-                fontWeight: FontWeight.w600, color: Colors.white, fontSize: 17),
+            style: AppTextStyle.bodySemiBold
+                .copyWith(fontWeight: FontWeight.w500, color: AppColors.white),
           ),
           Text(
             subtitle,
-            style: const TextStyle(color: Colors.white, fontSize: 10),
+            style: AppTextStyle.vTinyText.copyWith(color: AppColors.white),
           ),
-          OutlinedButton(
-            onPressed: () {},
-            style: OutlinedButton.styleFrom(
-                side: const BorderSide(color: Colors.white),
-                backgroundColor: Colors.transparent),
-            child: const Text(
-              'Coming Soon',
-              style: TextStyle(color: Colors.white, fontSize: 10),
-            ),
-          )
+          const ComingSoon(),
         ],
       ),
     );

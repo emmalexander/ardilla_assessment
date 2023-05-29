@@ -1,13 +1,15 @@
-import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/app_router.dart';
 import 'package:ardilla_assessment/screens/splash.dart';
 import 'package:flutter/material.dart';
-
-import 'screens/dashboard.dart';
-import 'screens/log_in.dart';
-import 'screens/sign_up/register_profile.dart';
-import 'screens/sign_up/verify_email.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'blocs/user_bloc.dart';
+import 'conts/app_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
 }
 
@@ -16,18 +18,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF8807F7)),
-          useMaterial3: true,
-          outlinedButtonTheme: OutlinedButtonThemeData(
-              style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: AppColors.primary),
-                  backgroundColor: AppColors.primary,
-                  foregroundColor: Colors.white)),
-          fontFamily: 'CabinetGrotesk'),
-      home: const Dashboard(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => UserBloc()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.appThemeData,
+        home: const SplashScreen(),
+        onGenerateRoute: AppRouter().onGenerateRoute,
+      ),
     );
   }
 }

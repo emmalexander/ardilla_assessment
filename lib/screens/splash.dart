@@ -1,9 +1,9 @@
-import 'package:ardilla_assessment/on_boarding_screen.dart';
+import 'package:ardilla_assessment/screens/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
-
+  static const id = 'splash_screen';
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 image: AssetImage(
                   'assets/splash_image.png',
                 ),
-                fit: BoxFit.fitWidth)),
+                fit: BoxFit.fill)),
       ),
     );
   }

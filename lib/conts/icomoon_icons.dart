@@ -13,11 +13,9 @@ class Icomoon {
   static const String _fontFamily = 'icomoon';
 
   static const IconData book = IconData(0xe900, fontFamily: _fontFamily);
-  static const IconData save_icon = IconData(0xe901, fontFamily: _fontFamily);
-  static const IconData rounded_stars =
+  static const IconData saveIcon = IconData(0xe901, fontFamily: _fontFamily);
+  static const IconData roundedStars =
       IconData(0xe902, fontFamily: _fontFamily);
-  static const IconData bx_log_out_circle =
-      IconData(0xe903, fontFamily: _fontFamily);
-  static const IconData fluent_arrow_growth_24_filled =
-      IconData(0xe904, fontFamily: _fontFamily);
+  static const IconData logOut = IconData(0xe903, fontFamily: _fontFamily);
+  static const IconData arrowGrowth = IconData(0xe904, fontFamily: _fontFamily);
 }

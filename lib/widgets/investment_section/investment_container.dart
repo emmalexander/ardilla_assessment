@@ -1,4 +1,5 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:ardilla_assessment/widgets/arrow_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class InvestmentContainer extends StatelessWidget {
     return Column(
       children: [
         Container(
+          margin: EdgeInsets.symmetric(horizontal: 40),
           decoration: BoxDecoration(
             color: AppColors.offWhite,
             borderRadius: BorderRadius.circular(12),
@@ -28,13 +30,21 @@ class InvestmentContainer extends StatelessWidget {
           child: Column(
             children: [
               Stack(
-                alignment: Alignment.center,
+                alignment: Alignment.bottomCenter,
                 children: [
                   ClipRRect(
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(12)),
-                      child: Image.asset(blurUrl)),
-                  Image.asset(imageUrl),
+                      child: Image.asset(
+                        blurUrl,
+                        //width: double.maxFinite,
+                      )),
+                  Align(
+                    child: Image.asset(
+                      imageUrl,
+                      height: 67,
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 13),
@@ -43,10 +53,9 @@ class InvestmentContainer extends StatelessWidget {
                 child: Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontSize: 15,
+                  style: AppTextStyle.smallSemi.copyWith(
                       color: AppColors.primaryDark,
-                      fontWeight: FontWeight.w600),
+                      fontWeight: FontWeight.w500),
                 ),
               ),
               const SizedBox(height: 13),

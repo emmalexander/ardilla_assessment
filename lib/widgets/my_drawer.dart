@@ -1,5 +1,8 @@
+import 'package:ardilla_assessment/conts/app_colors.dart';
 import 'package:ardilla_assessment/conts/icomoon_icons.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:ardilla_assessment/widgets/coming_soon.dart';
+import 'package:ardilla_assessment/widgets/custom_dialog_box.dart';
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/ic.dart';
@@ -22,103 +25,103 @@ class MyDrawer extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset('assets/avatar.png'),
+                Image.asset(
+                  'assets/avatar.png',
+                  height: 50,
+                ),
                 const SizedBox(height: 10),
-                const Text(
+                Text(
                   'Anita Ojieh',
-                  style: TextStyle(
-                    fontSize: 19,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: AppTextStyle.headerFourMidBold
+                      .copyWith(color: AppColors.white),
                 )
               ],
             ),
             const SizedBox(height: 50),
-            const ListTile(
+            ListTile(
+              onTap: () {},
               contentPadding: EdgeInsets.zero,
-              leading: Icon(
-                Icons.account_circle_outlined,
-                color: Colors.white,
-              ),
-              title: Text(
+              leading: const Icon(Icons.account_circle_outlined,
+                  color: AppColors.white),
+              title: const Text(
                 'Profile',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: AppColors.white),
               ),
             ),
-            const ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: Iconify(Ic.round_work_outline, color: Colors.white),
-              title: Text(
-                'Portfolio',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const ListTile(
+            ListTile(
+              onTap: () {},
               contentPadding: EdgeInsets.zero,
               leading:
-                  Icon(FluentIcons.payment_24_regular, color: Colors.white),
-              title: Text(
+                  const Iconify(Ic.round_work_outline, color: AppColors.white),
+              title: const Text(
+                'Portfolio',
+                style: TextStyle(color: AppColors.white),
+              ),
+            ),
+            ListTile(
+              onTap: () {},
+              contentPadding: EdgeInsets.zero,
+              leading: const Icon(FluentIcons.payment_24_regular,
+                  color: AppColors.white),
+              title: const Text(
                 'Payment',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: AppColors.white),
               ),
             ),
-            const ListTile(
+            ListTile(
+              onTap: () {},
               contentPadding: EdgeInsets.zero,
-              leading: Icon(Icomoon.fluent_arrow_growth_24_filled,
-                  color: Colors.white),
-              title: Text(
+              leading: const Icon(Icomoon.arrowGrowth, color: AppColors.white),
+              title: const Text(
                 'Investment',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: AppColors.white),
               ),
-              trailing: ComingSoon(),
+              trailing: const ComingSoon(),
             ),
-            const ListTile(
+            ListTile(
+              onTap: () {},
               contentPadding: EdgeInsets.zero,
-              leading: Iconify(
-                Ic.security,
-                color: Colors.white,
-              ),
-              title: Text(
+              leading: const Iconify(Ic.security, color: AppColors.white),
+              title: const Text(
                 'Insurance',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: AppColors.white),
               ),
-              trailing: ComingSoon(),
+              trailing: const ComingSoon(),
             ),
-            const ListTile(
+            ListTile(
+              onTap: () {},
               contentPadding: EdgeInsets.zero,
-              leading: Iconify(
+              leading: const Iconify(
                 Ic.outline_explore,
-                color: Colors.white,
+                color: AppColors.white,
               ),
-              title: Text(
+              title: const Text(
                 'Budgeting',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
+                style: TextStyle(color: AppColors.white),
               ),
             ),
             const Spacer(),
-            const ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: Icon(Icomoon.bx_log_out_circle, color: Colors.white),
-              title: Text(
-                'Log Out',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            TextButton(
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) => const CustomDialogBox(
+                            title: 'Are you sure you want to LOG OUT?',
+                          ));
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Icon(Icomoon.logOut, color: AppColors.white),
+                    const SizedBox(width: 15),
+                    Text(
+                      'Log Out',
+                      style: AppTextStyle.smallSemi
+                          .copyWith(color: AppColors.white),
+                    )
+                  ],
+                ))
           ],
         ),
       ),

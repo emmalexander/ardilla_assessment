@@ -1,4 +1,5 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class AchievementContainer extends StatelessWidget {
@@ -34,10 +35,8 @@ class AchievementContainer extends StatelessWidget {
       children: [
         Text(
           topTitle,
-          style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primaryDark),
+          style: AppTextStyle.bodySemi.copyWith(
+              fontWeight: FontWeight.w500, color: AppColors.primaryDark),
         ),
         const SizedBox(height: 8),
         ClipRRect(
@@ -58,18 +57,16 @@ class AchievementContainer extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                            color: titleTextColor),
+                        style: AppTextStyle.headerFourBold
+                            .copyWith(color: titleTextColor),
                       ),
                       const SizedBox(height: 10),
                       SizedBox(
-                        width: 170,
+                        width: 150,
                         child: Text(
                           subtitle,
-                          style: const TextStyle(
-                              fontSize: 10, color: AppColors.primaryDark),
+                          style: AppTextStyle.vTinyText
+                              .copyWith(color: AppColors.primaryDark),
                         ),
                       ),
                       const Spacer(),
@@ -83,7 +80,11 @@ class AchievementContainer extends StatelessWidget {
                 Padding(
                   padding: rightPadding,
                   child: Align(
-                      alignment: alignment, child: Image.asset(rightImageUrl)),
+                      alignment: alignment,
+                      child: Image.asset(
+                        rightImageUrl,
+                        height: 130,
+                      )),
                 )
               ],
             ),

@@ -1,4 +1,5 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class QuickLinksRow extends StatelessWidget {
@@ -48,10 +49,8 @@ class QuickLinksRow extends StatelessWidget {
         ),
         Text(
           text,
-          style: const TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primaryDark),
+          style: AppTextStyle.vTinyText.copyWith(
+              fontWeight: FontWeight.w500, color: AppColors.primaryDark),
         )
       ],
     );

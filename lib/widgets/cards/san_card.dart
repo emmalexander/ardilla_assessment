@@ -1,5 +1,8 @@
+import 'package:ardilla_assessment/blocs/user_bloc.dart';
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:iconify_flutter/icons/pajamas.dart';
@@ -35,12 +38,11 @@ class SANCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      const Text(
+                      Text(
                         'SAN',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
+                        style: AppTextStyle.bodySemi.copyWith(
+                            color: AppColors.white,
+                            fontWeight: FontWeight.w500),
                       ),
                       const SizedBox(width: 20),
                       Container(
@@ -49,52 +51,59 @@ class SANCard extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: AppColors.secondary,
                             borderRadius: BorderRadius.circular(60)),
-                        child: const Text(
+                        child: Text(
                           '+10.00%',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 10),
+                          style: AppTextStyle.vTinyTextBold
+                              .copyWith(color: AppColors.white),
                         ),
                       )
                     ],
                   ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'NGN 100,000.00',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Iconify(
-                        Pajamas.eye,
-                        color: Colors.white,
-                      )
-                    ],
+                  BlocBuilder<UserBloc, UserState>(
+                    builder: (context, state) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            state.showBalance ?? false
+                                ? 'NGN 100,000.00'
+                                : '*************',
+                            style: AppTextStyle.headerThreeBold.copyWith(
+                              color: AppColors.white,
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              context.read<UserBloc>().add(ShowBalanceEvent());
+                            },
+                            child: Iconify(
+                              state.showBalance ?? false
+                                  ? Pajamas.eye
+                                  : Pajamas.eye_slash,
+                              color: AppColors.white,
+                            ),
+                          )
+                        ],
+                      );
+                    },
                   ),
-                  const Text('**********',
-                      style: TextStyle(
-                        fontSize: 20,
+                  Text('**********',
+                      style: AppTextStyle.headerFour.copyWith(
                         fontWeight: FontWeight.w500,
-                        color: Colors.white,
+                        color: AppColors.white,
                       )),
-                  const Wrap(
+                  Wrap(
                     spacing: 10,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
                       Text('Generate Account Number',
-                          style: TextStyle(
-                            fontSize: 13,
+                          style: AppTextStyle.tinyText.copyWith(
                             fontWeight: FontWeight.w500,
-                            color: Colors.white,
+                            color: AppColors.white,
                           )),
-                      Iconify(
+                      const Iconify(
                         MaterialSymbols.arrow_circle_right,
-                        color: Colors.white,
+                        color: AppColors.white,
                         size: 16,
                       )
                     ],

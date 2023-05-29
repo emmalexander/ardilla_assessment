@@ -1,3 +1,4 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class ChartWidget extends StatelessWidget {
@@ -8,6 +9,7 @@ class ChartWidget extends StatelessWidget {
     return Container(
       width: 230,
       height: 36,
+      child: LineChart(LineChartData()),
     );
   }
 }

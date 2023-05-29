@@ -1,4 +1,5 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,7 +13,7 @@ class ProfileRow extends StatelessWidget {
         Builder(builder: (context) {
           return IconButton(
             icon: Image.asset(
-              'assets/avatar.png',
+              'assets/avatar.png', height: 50,
               // width: 50,
             ),
             onPressed: () {
@@ -30,23 +31,22 @@ class ProfileRow extends StatelessWidget {
               children: [
                 Text(
                   'Good Morning.',
-                  style: TextStyle(color: Colors.grey.shade500, fontSize: 13),
+                  style: AppTextStyle.tinyText.copyWith(
+                      color: Colors.grey.shade500, fontWeight: FontWeight.w500),
                 ),
                 const Icon(
                   Icons.sunny,
-                  color: Colors.amber,
+                  color: AppColors.amber,
                   size: 13,
                 )
                 // Iconify(EmojioneMonotone.sun)
                 //Image.asset('assets/sun.png')
               ],
             ),
-            const Text(
+            Text(
               'Cadet <Annie/>',
-              style: TextStyle(
-                  color: AppColors.primaryDark,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 18),
+              style: AppTextStyle.headerFourMidBold
+                  .copyWith(color: AppColors.primaryDark),
             ),
           ],
         ),

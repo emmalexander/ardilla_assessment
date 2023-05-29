@@ -1,21 +1,43 @@
-List<String> investmentBlurImages = [
-  'assets/blur_1.png',
-  'assets/blur_2.png',
-  'assets/blur_3.png'
-];
-List<String> investmentImages = [
-  'assets/investment_1.png',
-  'assets/investment_2.png',
-  'assets/investment_3.png'
-];
-List<String> investmentTitles = [
-  'Unprecedented access to investment opportunities',
-  'Build your savings the right way',
-  'Insurance policies you can trust'
-];
-List<String> investmentPercents = ['20', '12', '12'];
-List<String> investmentActionText = [
-  'Start Investing',
-  'Start Investing',
-  'Make youe first claim'
+import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
+import 'package:ardilla_assessment/widgets/intro/introduction.dart';
+import 'package:flutter/material.dart';
+
+final List<Introduction> list = [
+  Introduction(
+    title: 'Lorem Ipsum Kip Antares Lorem',
+    titleTextStyle:
+        AppTextStyle.headerOneBold.copyWith(color: AppColors.primaryDark),
+    subTitle:
+        'Lorem ipsum dolor sit amet consectetur. Congue eget aliquet nullam velit volutpat in viverra. Amet integer urna ornare congue ultrices at.',
+    subTitleTextStyle: AppTextStyle.tinyText.copyWith(color: Colors.grey),
+    imageUrl: 'assets/onboarding.png',
+  ),
+  Introduction(
+    title: 'Lorem Ipsum Kip Antares Lorem',
+    titleTextStyle:
+        AppTextStyle.headerOneBold.copyWith(color: AppColors.primaryDark),
+    subTitle:
+        'Lorem ipsum dolor sit amet consectetur. Congue eget aliquet nullam velit volutpat in viverra. Amet integer urna ornare congue ultrices at.',
+    subTitleTextStyle: AppTextStyle.tinyText.copyWith(color: Colors.grey),
+    imageUrl: 'assets/onboarding.png',
+  ),
+  Introduction(
+    title: 'Lorem Ipsum Kip Antares Lorem',
+    titleTextStyle:
+        AppTextStyle.headerOneBold.copyWith(color: AppColors.primaryDark),
+    subTitle:
+        'Lorem ipsum dolor sit amet consectetur. Congue eget aliquet nullam velit volutpat in viverra. Amet integer urna ornare congue ultrices at.',
+    subTitleTextStyle: AppTextStyle.tinyText.copyWith(color: Colors.grey),
+    imageUrl: 'assets/onboarding.png',
+  ),
+  Introduction(
+    title: 'Lorem Ipsum Kip Antares Lorem',
+    titleTextStyle:
+        AppTextStyle.headerOneBold.copyWith(color: AppColors.primaryDark),
+    subTitle:
+        'Lorem ipsum dolor sit amet consectetur. Congue eget aliquet nullam velit volutpat in viverra. Amet integer urna ornare congue ultrices at.',
+    subTitleTextStyle: AppTextStyle.tinyText.copyWith(color: Colors.grey),
+    imageUrl: 'assets/onboarding.png',
+  ),
 ];

@@ -1,3 +1,5 @@
+import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class ComingSoon extends StatelessWidget {
@@ -11,12 +13,12 @@ class ComingSoon extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(60),
           border: const Border.fromBorderSide(
-            BorderSide(color: Colors.white),
+            BorderSide(color: AppColors.white),
           )),
-      child: const Center(
+      child: Center(
         child: Text(
           'Coming Soon',
-          style: TextStyle(fontSize: 8, color: Colors.white),
+          style: AppTextStyle.vvTinyText.copyWith(color: AppColors.white),
         ),
       ),
     );

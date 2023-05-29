@@ -1,3 +1,5 @@
+import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class VideoWidget extends StatelessWidget {
@@ -19,7 +21,7 @@ class VideoWidget extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: const Border.fromBorderSide(
-                      BorderSide(color: Color(0xFFE73F76)))),
+                      BorderSide(color: AppColors.secondary))),
             ),
           ),
           Image.asset(
@@ -27,6 +29,27 @@ class VideoWidget extends StatelessWidget {
             width: 335,
             height: 300,
           ),
+          Positioned(
+            bottom: 0,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'CEO, Mrs Oyinye',
+                    style: AppTextStyle.tinyTextBold
+                        .copyWith(color: AppColors.white),
+                  ),
+                  Text(
+                    'What is Ardila and it benefits?',
+                    style:
+                        AppTextStyle.vTinyText.copyWith(color: AppColors.white),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

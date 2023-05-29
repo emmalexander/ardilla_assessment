@@ -33,7 +33,7 @@ class AchievementPageView extends StatelessWidget {
             alignment: Alignment.topRight,
             backgroundImage: Image.asset('assets/stars_background.png'),
             rightImageUrl: 'assets/medal.png',
-            rightPadding: const EdgeInsets.only(right: 10),
+            rightPadding: const EdgeInsets.only(right: 50),
             smallBottomWidget: const SuperSaverWidget(),
           ),
           AchievementContainer(

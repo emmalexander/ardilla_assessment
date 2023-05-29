@@ -14,7 +14,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
-
+  static const id = 'dashboard_screen';
   @override
   State<Dashboard> createState() => _DashboardState();
 }

@@ -1,9 +1,13 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
+import 'package:ardilla_assessment/screens/sign_up/register_profile.dart';
+import 'package:ardilla_assessment/widgets/buttons/app_filled_button.dart';
+import 'package:ardilla_assessment/widgets/buttons/app_outlined_button.dart';
 import 'package:flutter/material.dart';
 
 class VerifyEmail extends StatelessWidget {
   const VerifyEmail({Key? key}) : super(key: key);
-
+  static const id = 'verify_email_screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,46 +34,30 @@ class VerifyEmail extends StatelessWidget {
             ),
             Image.asset('assets/verify_email.png'),
             const SizedBox(height: 60),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 70),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 70),
               child: Text(
                 'Verify your email address',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.primaryDark),
+                style: AppTextStyle.headerTwoBold
+                    .copyWith(color: AppColors.primaryDark),
               ),
             ),
             const Spacer(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                OutlinedButton(
+                AppOutlinedButton(
+                  text: 'Open Email App',
                   onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    foregroundColor: AppColors.primary,
-                  ),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    child: Text(
-                      'Open Email App',
-                      style: TextStyle(fontWeight: FontWeight.w700),
-                    ),
-                  ),
                 ),
                 const SizedBox(height: 20),
-                OutlinedButton(
-                  onPressed: () {},
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    child: Text(
-                      'Continue',
-                      style: TextStyle(fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                ),
+                AppFilledButton(
+                    text: 'Continue',
+                    color: AppColors.primary,
+                    onPressed: () {
+                      Navigator.pushNamed(context, RegisterProfile.id);
+                    }),
               ],
             ),
           ],

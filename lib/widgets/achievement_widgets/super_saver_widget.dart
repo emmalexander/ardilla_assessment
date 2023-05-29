@@ -1,4 +1,5 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class SuperSaverWidget extends StatelessWidget {
@@ -8,10 +9,13 @@ class SuperSaverWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/trophy.png'),
-        const Text(
+        Image.asset(
+          'assets/trophy.png',
+          height: 35,
+        ),
+        Text(
           'Super Saver',
-          style: TextStyle(fontSize: 8, color: AppColors.primaryDark),
+          style: AppTextStyle.vvTinyText.copyWith(color: AppColors.primaryDark),
         ),
       ],
     );
