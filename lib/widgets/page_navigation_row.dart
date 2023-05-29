@@ -19,7 +19,7 @@ class PageNavigationRow extends StatelessWidget {
                 Icons.arrow_back_ios,
                 size: 17,
               )),
-          const SizedBox(width: 10),
+          const SizedBox(width: 15),
           GestureDetector(
             onTap: onForwardPressed,
             child: Container(

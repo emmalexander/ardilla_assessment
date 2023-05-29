@@ -1,3 +1,4 @@
+import 'package:ardilla_assessment/conts/app_colors.dart';
 import 'package:ardilla_assessment/widgets/circle_progress_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -210,7 +211,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           width: 80,
           height: 80,
           child: CircleProgressBar(
-            backgroundColor: Colors.white,
+            backgroundColor: AppColors.primary.withOpacity(.1),
             foregroundColor:
                 widget.foregroundColor ?? Theme.of(context).primaryColor,
             value: ((_currentPage + 1) * 1.0 / widget.introductionList!.length),

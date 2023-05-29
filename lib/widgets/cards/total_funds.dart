@@ -1,5 +1,6 @@
 import 'package:ardilla_assessment/blocs/user_bloc.dart';
 import 'package:ardilla_assessment/conts/app_colors.dart';
+import 'package:ardilla_assessment/conts/app_constants.dart';
 import 'package:ardilla_assessment/conts/text_styles.dart';
 import 'package:ardilla_assessment/widgets/cards/ngn_usd_widget.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,9 @@ class TotalFunds extends StatelessWidget {
                         children: [
                           Text(
                             state.showBalance ?? false
-                                ? 'NGN 400,000.00'
+                                ? state.ngnSelected ?? false
+                                    ? 'NGN 400,000.00'
+                                    : 'USD ${(400000 / 740).toStringAsFixed(2).replaceAllMapped(reg, mathFunc)}'
                                 : '*************',
                             style: AppTextStyle.headerThreeBold
                                 .copyWith(color: AppColors.primaryDark),
@@ -50,6 +53,9 @@ class TotalFunds extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               context.read<UserBloc>().add(ShowBalanceEvent());
+                              print((400000 / 740)
+                                  .toString()
+                                  .replaceAllMapped(reg, mathFunc));
                             },
                             child: Iconify(
                               state.showBalance ?? false

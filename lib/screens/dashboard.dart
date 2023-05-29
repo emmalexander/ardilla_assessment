@@ -4,9 +4,9 @@ import 'package:ardilla_assessment/widgets/cards/cards_page_view.dart';
 import 'package:ardilla_assessment/widgets/chart_section/chart_container.dart';
 import 'package:ardilla_assessment/widgets/explore/explore_section.dart';
 import 'package:ardilla_assessment/widgets/investment_section/investment_page_view.dart';
+import 'package:ardilla_assessment/widgets/my_app_bar.dart';
 import 'package:ardilla_assessment/widgets/my_drawer.dart';
 import 'package:ardilla_assessment/widgets/page_navigation_row.dart';
-import 'package:ardilla_assessment/widgets/profile_row.dart';
 import 'package:ardilla_assessment/widgets/quick_links_section/quick_links_section.dart';
 import 'package:ardilla_assessment/widgets/video_widget.dart';
 import 'package:flutter/material.dart';
@@ -59,15 +59,12 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: Colors.white,
       drawer: const MyDrawer(),
+      appBar: const MyAppBar(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 20, right: 20, top: 30),
-              child: ProfileRow(),
-            ),
             SizedBox(
               height: 250,
               child: CardsPageView(

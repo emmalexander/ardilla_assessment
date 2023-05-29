@@ -87,10 +87,7 @@ class ChartContainer extends StatelessWidget {
                 ],
               ),
               // TODO: Implement curve chart
-              Image.asset(
-                'assets/chart.png',
-                width: 200,
-              ),
+              Image.asset('assets/chart.png', width: 200),
               Row(
                 children: [
                   Wrap(

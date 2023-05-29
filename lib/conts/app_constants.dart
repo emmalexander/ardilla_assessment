@@ -41,3 +41,6 @@ final List<Introduction> list = [
     imageUrl: 'assets/onboarding.png',
   ),
 ];
+
+RegExp reg = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+String mathFunc(Match match) => '${match[1]},';

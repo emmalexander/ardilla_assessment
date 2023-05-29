@@ -26,7 +26,6 @@ class NGNUSDWidget extends StatelessWidget {
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 10,
       children: [
-        // TODO Implement amount conversion
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 4),
           decoration: BoxDecoration(
@@ -67,10 +66,19 @@ class NGNUSDWidget extends StatelessWidget {
             ],
           ),
         ),
-        Text(
-          // TODO naira symbol
-          'N740 /\$1',
-          style: AppTextStyle.tinyTextBold.copyWith(color: rateColor),
+        Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            Text(
+              '\u20A6',
+              style: AppTextStyle.tinyTextBold
+                  .copyWith(fontFamily: '', color: rateColor),
+            ),
+            Text(
+              '740 /\$1',
+              style: AppTextStyle.tinyTextBold.copyWith(color: rateColor),
+            ),
+          ],
         )
       ],
     );
