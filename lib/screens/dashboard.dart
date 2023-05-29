@@ -75,6 +75,11 @@ class _DashboardState extends State<Dashboard> {
               child: SmoothPageIndicator(
                 controller: _pageController1,
                 count: 3,
+                onDotClicked: (page) {
+                  _pageController1.animateToPage(page,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.ease);
+                },
                 effect: const SlideEffect(
                   dotHeight: 2,
                   dotWidth: 70,
