@@ -1,10 +1,12 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
-import 'package:ardilla_assessment/screens/log_in.dart';
 import 'package:flutter/material.dart';
 
 class CustomDialogBox extends StatelessWidget {
-  const CustomDialogBox({Key? key, required this.title}) : super(key: key);
+  const CustomDialogBox(
+      {Key? key, required this.title, required this.onPressed})
+      : super(key: key);
   final String title;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -28,8 +30,7 @@ class CustomDialogBox extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 GestureDetector(
-                  onTap: () =>
-                      Navigator.pushReplacementNamed(context, LogIn.id),
+                  onTap: onPressed,
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 10),

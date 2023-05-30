@@ -1,6 +1,7 @@
 import 'package:ardilla_assessment/conts/app_colors.dart';
 import 'package:ardilla_assessment/conts/icomoon_icons.dart';
 import 'package:ardilla_assessment/conts/text_styles.dart';
+import 'package:ardilla_assessment/screens/log_in.dart';
 import 'package:ardilla_assessment/widgets/coming_soon.dart';
 import 'package:ardilla_assessment/widgets/custom_dialog_box.dart';
 import 'package:flutter/material.dart';
@@ -105,8 +106,15 @@ class MyDrawer extends StatelessWidget {
                 onPressed: () {
                   showDialog(
                       context: context,
-                      builder: (context) => const CustomDialogBox(
+                      builder: (context) => CustomDialogBox(
                             title: 'Are you sure you want to LOG OUT?',
+                            onPressed: () {
+                              Navigator.pushNamedAndRemoveUntil(
+                                context,
+                                LogIn.id,
+                                (Route<dynamic> route) => false,
+                              );
+                            },
                           ));
                 },
                 child: Row(
