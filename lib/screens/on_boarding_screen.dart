@@ -12,12 +12,7 @@ class OnBoardingScreen extends StatelessWidget {
     return IntroScreenOnboarding(
       introductionList: list,
       onTapSkipButton: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SignUp(),
-          ), //MaterialPageRoute
-        );
+        Navigator.pushReplacementNamed(context, SignUp.id);
       },
       skipTextStyle: AppTextStyle.bodySemiBold,
     );
