@@ -28,6 +28,7 @@ These instructions will help you get a copy of the project up and running on you
 - [app-arm64-v8a-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-arm64-v8a-release.apk)
 - [app-armeabi-v7a-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-armeabi-v7a-release.apk)
 - [app-x86_64-release.apk](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/app-x86_64-release.apk)
+- [Payload.ipa](https://github.com/emmalexander/ardilla_assessment/releases/download/v1.0.0/Payload.ipa)
 
 ### Source Code
 -> [Source code(zip)](https://github.com/emmalexander/ardilla_assessment/archive/refs/tags/v1.0.0.zip)
