@@ -43,11 +43,11 @@ class ChartContainer extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 80,
                   child: LinearProgressIndicator(
                     value: .7,
-                    borderRadius: BorderRadius.circular(80),
+                    //borderRadius: BorderRadius.circular(80),
                   ),
                 )
               ],
